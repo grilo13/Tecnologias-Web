@@ -1,0 +1,117 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta charset="utf-8" >
+   <title>Contest Entry Form</title>
+   <style type="text/css">
+      ol, ul { 
+        list-style-type: none;
+      }
+      h1 {
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bold ;
+      }
+      #paragraph1 p{
+        font-family:Arial, Helvetica, sans-serif;
+      }
+      #contest_entry p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700 ;
+      }
+
+      #attributes li {
+        display: inline-block;
+        width: 210px;
+        text-align: left;
+      }
+      #textbox li {
+        font-family:Arial, Helvetica, sans-serif;
+      }
+
+      textarea {
+        font-family: 'Courier New', Courier, monospace ;
+      }
+      h2{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold ;
+        font-size: 20px;
+      }
+
+      .reset_button {
+          margin-left:5px;
+      }
+
+      .submit_button {
+        margin-left: 5px;
+      }
+   </style>
+</head>
+
+<body>
+
+<h1>&ldquo;Pimp My Shoes&rdquo; Contest Entry Form</h1>
+
+<div id="paragraph1">
+  <p>Want to trade in your old sneakers for a custom pair of Forcefields?</br> Make a case for why your shoes have <em>got</em> to go and you may be </br> one of ten lucky winners.</p>
+</div>
+
+<div id="contest_entry">
+  <p>Contest Entry Information</p>
+</div>
+
+<form action="/localhost:8080" method="POST">
+<ul>
+  <div id="attributes">
+    <li>Name:<input type="text" name="attribute" value="" maxlength="24"></li><br/>
+    <li>Email Address: <input type="text" name="attribute" value="" maxlength="24"></li></br>
+    <li>State: <input type="text" name="attribute" value="" maxlength="24"></li></div></br>
+  </div>
+  
+  <div id="textbox">
+    <li>My shoes are SO old…</li>
+    <textarea name="entry" rows="4" cols="60">No more than 300 characters long</textarea>
+  </div>
+</ul>
+
+<h2>Design your custom Forcefields:</h2>
+
+<p>Custom Shoe Design</p>
+
+<p>Color <em>(choose one)</em>:</p>
+  <ul>
+    <li><input type="radio" name="color" value="red"> Red</li>
+    <li><input type="radio" name="color" value="blue"> Blue</li>
+    <li><input type="radio" name="color" value="black"> Black</li>
+    <li><input type="radio" name="color" value="silver"> Silver</li>
+  </ul>
+
+<p>Features <em>(Choose as many as you want)</em></p>
+  <ul>
+    <li><input type="checkbox" name="features" value="sparkley"> Sparkley laces</li>
+    <li><input type="checkbox" name="features" value="mettalic"> Metallic logo</li>
+    <li><input type="checkbox" name="features" value="heels"> Light-up heels</li>
+    <li><input type="checkbox" name="features" value="mp3"> MP3-enabled</li>
+  </ul>
+
+<p>Size</p>
+<p>(Sizes reflect standard men's sizes): 
+  <select name="size">
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+  </select>
+</p>
+
+<input type="submit" class="submit_button" value="Pimp My Shoes!" >
+<input type="reset" class="reset_button" value="Reset">
+
+</form>
+ 
+</body>
+</html>
