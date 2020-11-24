@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Million Dollar WebApp</title>
+</head>
+
+<body onload="showUnreadCount()"></body>
+	<script>
+		//var originalTitle = document.getElementsByTagName("title");
+		//alert("TItle is " + originalTitle.innerHTML)
+		var originalTitle = document.title;
+
+		alert("Title is " + originalTitle);
+
+		/*function showUnreadCount(unread = 3) {
+			var oldTitle = document.title;
+			var newTitle = document.title + unread; 
+			alert(oldTitle + " ( " + unread + " new messages!) ");
+        }*/
+
+        var unread_messages = 0;
+
+        function buttonFunction(){
+            unread_messages =  unread_messages + 1;
+            var newTitle = document.title + unread_messages;
+            alert(unread_messages);
+            alert(newTitle);
+            document.getElementById('container').innerHTML = "You have " + unread_messages + " unread messages";
+            document.getElementById("container").style.color = "#ff0000";
+            document.title.innerHTML = newTitle;
+        }
+
+    </script>
+    
+    <div id="container">
+        <p>Welcome to the Billion Dollar Web Page</p>
+    </div>
+
+    <button type="button" onclick="buttonFunction()">Click Me!</button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Million Dollar WebApp</title>
+</head>
+
+<body onload="showUnreadCount()"></body>
+	<script>
+		//var originalTitle = document.getElementsByTagName("title");
+		//alert("TItle is " + originalTitle.innerHTML)
+		var originalTitle = document.title;
+
+		alert("Title is " + originalTitle);
+
+		function showUnreadCount(unread = 3) {
+			var oldTitle = document.title;
+			var newTitle = document.title + unread; 
+			alert(oldTitle + " ( " + unread + " new messages!) ");
+		}
+
+	</script>
+</body>
+</html>
