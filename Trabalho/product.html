@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
+ <title>Product Details Page</title>
+ <link href='http://fonts.googleapis.com/css?family=Marko+One' rel='stylesheet' type='text/css'>
+ <link rel="shortcut icon" type="image/x-icon" href="images/shoe_logo.png">
+ <link rel="stylesheet" href="styles/index.css">
+</head>
+
+  <body>
+    <div class="flex-container">
+      <div class="dividecontainer1">
+        <h1>Sneakers Temple</h1>
+      </div>
+      <div class="dividecontainer2">
+
+        <div class="dividecontainer3">
+          <div class="logoimg"><img src="./images/shoelogo250.png" alt="Site logo"></div>
+        </div>
+
+        <div class="dividecontainer6">
+
+        <div class="dividecontainer4">
+          <div class="search_input"><input type="text" name="search_button" value="" placeholder="Search here" maxlength="50"></div>
+          <div class="lupa"><input type="image" name ="lupa" src="images/baseline_search_black_24dp2.png" alt="Submit Form" /></div>
+        </div>
+
+        <div class="dividecontainer5">
+          <div class="advanced_search"><a href="advanced_search.html">Advanced Search</a></div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flex-container2">
+      <div class="categories">
+        <h1>Categories</h1>
+        <ul>
+          <li><a href="#">Bags</a></li>
+          <li><a href="#">Hats</a></li>
+          <li><a href="#">Jackets</a></li>
+          <li><a href="#">Jeans</a></li>
+          <li class="shoesclass"><a href="#">Shoes</a></li>
+          <li><a href="#">Tees</a></li>
+        </ul>   
+      </div>
+
+      <div class="products">
+        <div class="itemsinpage"><h2>1 item in this page</h2></div>
+        <div class="products1_head"><h1>Product Details</h1></div>
+        <div class="shoe1products">
+          <div class="divide1product">
+            <picture>
+              <source media="(min-width: 600px)" srcset="images/vansoldskool300.jpg">
+              <source media="(min-width: 0px)" srcset="images/vansoldskool450.jpg">
+              <img src="images/vansoldskool300.jpg" alt="Vans Old Skool Black Color">
+            </picture>
+            
+            <div class="description1product"><h1>Description</h1><h2>The first to bear the iconic side stripe, the Vans Old Skool is a low top, lace-up shoe. It is lined, has padded collars for support and flexibility, re-enforced toecaps to withstand repeated wear, and features the Vans signature waffle outsole for a firmer grip.</h2><a id ="livephoto" href="https://images.vans.com/is/image/VansEU/VN000D3HY28-HERO?$PDP-FULL-IMAGE$">Real live photo</a></div>
+        </div>
+
+        <div class="divide2">
+          <form action="http://localhost:8080/product.html" method="POST">
+         <div class="description2product">
+          <h1>Model: Vans Old Skool</h1>
+          <h1>Price: 70 dollars</h1>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">Shipping costs:
+              <select name="shippingprice" style="width:20%;">
+              <option>5.95 for Portugal</option>
+              <option>10.95 for Rest of The World</option>
+              <option>Free if costs > 200 dollars</option>           
+              </select>
+          </p>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">Delivery date:
+            <select name="shippingprice" style="width:20%;">
+            <option>24-48 hours for Portugal</option>
+            <option>1 week for rest of the World</option>         
+            </select>
+          </p>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">Payment methods:
+            <select name="shippingprice" style="width:20%;">
+            <option>Paypal</option>
+            <option>MbWay</option>        
+            <option>Skrill</option>    
+            <option>Visa/Mastercard</option>  
+            </select>
+          </p>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">
+            Units wanted: (2 digits) <input type="text" name="units" value="" placeholder="Insert here the number" maxlength="2">
+          </p>
+
+          <input type="submit" value="Checkout" style="width: 20%; margin-left: 15px;color: aliceblue; background-color: darkgray; ">
+        </div>
+
+      </form>
+
+        </div>
+
+        </div>  
+
+        <h3><a id="nextpage" href="#">Next Page</a></h3>
+
+      </div>
+    </div>
+
+    <div class="about">
+      <h1>About this page  <a href="#">Link</a></h1>
+    </div>
+  </body>
+
+</html>
+
+
+

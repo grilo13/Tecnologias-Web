@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
+ <title>Advanced Search Page</title>
+ <link href='http://fonts.googleapis.com/css?family=Marko+One' rel='stylesheet' type='text/css'>
+ <link rel="shortcut icon" type="image/x-icon" href="images/shoe_logo.png">
+ <link rel="stylesheet" href="styles/index.css">
+
+</head>
+
+  <body>
+    <div class="flex-container">
+      <div class="dividecontainer1">
+        <h1>Sneakers Temple</h1>
+      </div>
+      <div class="dividecontainer2">
+
+        <div class="dividecontainer3">
+          <div class="logoimg"><img src="./images/shoelogo250.png" alt="Site logo"></div>
+        </div>
+
+        <div class="dividecontainer6">
+
+        <div class="dividecontainer4">
+          <div class="search_input"><input type="text" name="search_button" value="" placeholder="Search here" maxlength="50"></div>
+          <div class="lupa"><input type="image" name ="lupa" src="images/baseline_search_black_24dp2.png" alt="Submit Form" /></div>
+        </div>
+
+        <div class="dividecontainer5">
+          <div class="advanced_search"><a href="#" onclick="javascript:alert('You already in advanced search page.');return false;">Advanced Search</a></div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flex-container2">
+      <div class="categories">
+        <h1>Categories</h1>
+        <ul>
+          <li><a href="#">Bags</a></li>
+          <li><a href="#">Hats</a></li>
+          <li><a href="#">Jackets</a></li>
+          <li><a href="#">Jeans</a></li>
+          <li class="shoesclass"><a href="#">Shoes</a></li>
+          <li><a href="#">Tees</a></li>
+        </ul>   
+      </div>
+
+      <div class="productsadvanced">
+        <div class="productsadvanced_head"><h1>Advanced Search</h1></div>
+        <form action="http://localhost:8080/search.html" method="POST">
+        <div class="advanced1">          
+          <div class="descriptionadvancedsearch1">
+            <p><h1>Categories:</h1></p>
+            <ul>
+              <li><input type="checkbox" name="categorie" value="tee"> Tees</li>
+              <li><input type="checkbox" name="categorie" value="jeans"> Jeans</li>
+              <li><input type="checkbox" name="categorie" value="jacket"> Jackets</li>
+              <li><input type="checkbox" name="categorie" value=shorts> Shorts</li>
+              <li><input type="checkbox" name="categorie" value="shirts"> Shirts</li>
+              <li><input type="checkbox" name="categorie" value="polos"> Polos</li>
+              <li><input type="checkbox" name="categorie" value="tracksuits"> Tracksuits</li>
+              <li><input type="checkbox" name="categorie" value="hats"> Hats</li>
+              <li><input type="checkbox" name="categorie" value="bags"> Bags</li>
+              <li><input type="checkbox" name="categorie" value="skateparts"> Skate Parts</li>
+             </ul>
+          </div>
+          <div class="descriptionadvancedsearch2">
+            <p><h1>Color:</h1></p>
+              <input type="color" id="color" name="color" value="#000">
+            <p><h1>Price: (0-2000 dollars)</h1></p>
+              <input type="range" id="price" name="price" min="0" max="2000">
+          </div>
+        </div>
+        <input type="submit" value="Search">
+      </form>
+
+        <h3><a id="nextpage" href="#">Next Page</a></h3>
+
+      </div>
+    </div>
+
+    <div class="about">
+      <h1>About this page  <a href="#">Link</a></h1>
+    </div>
+  </body>
+
+</html>
+
+
+
