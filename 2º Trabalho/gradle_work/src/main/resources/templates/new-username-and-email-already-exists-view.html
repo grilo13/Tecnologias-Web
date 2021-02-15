@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
+ <title>Product List Page</title>
+ <link rel="shortcut icon" type="image/x-icon" href="images/shoe_logo.png">
+ <link th:href="@{/styles/index.css}" rel="stylesheet" />
+
+</head>
+
+  <body>
+    <div class="flex-container">
+      <div class="dividecontainer1">
+        <a class = "sitename" th:href="@{/home}"><h1>Sneakers Temple</h1></a>
+      </div>
+      <div class="dividecontainer2">
+
+        <div class="dividecontainer3">
+          <div class="logoimg"><img src="./images/shoelogo250.png" alt="Site logo"></div>
+        </div>
+
+        <div class="dividecontainer6">
+
+	        <form method="post" th:action="@{/list-products-filtered}">
+			    Filter: <input type="text" name="search_button" id="name" placeholder="Search here (by the name of the product)" size="50" />
+			    &nbsp;
+		    	<input type="submit" value="Search" />
+			</form>
+		
+			<div class="dividecontainer5">
+	          	<div class="advanced_search"><a href="advanced_search.html">Advanced Search</a></div>
+	        </div>
+        </div>
+        <div class="dividecontainer8">
+			<form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+                <button sec:authorize="isAuthenticated()" class="rl_button" type="submit">Logout</button>
+                <button sec:authorize="isAnonymous()" th:href="@{~/login}" class="rl_button" type="submit">Login</button>
+            </form>
+			</br>
+			<form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/new-client.html}">
+                 <button sec:authorize="isAnonymous()" class="rl_button">Register</button>
+            </form>
+	      	<div sec:authorize="hasRole('ADMIN')">
+			    <p><a th:href="@{/adminpage}">Admin Page</a></p>
+			</div>
+			<div sec:authorize="hasRole('ADMIN')">
+			    <p>Logged as [[${#httpServletRequest.remoteUser}]]</p>
+			</div>
+			<div sec:authorize="hasRole('USER')">
+			    <p>Logged as [[${#httpServletRequest.remoteUser}]]</p>
+			</div>
+        </div>
+      </div>
+    </div>
+
+     <div class="flex-container2">
+      <div class="products">
+        <div class="register_head"><h1>Register</h1></div>
+        <p id="register_greetings" th:text="'The username ' + ${name} + ' and the email ' + ${email} + ' are already in use. Please register again with new ones'"/>
+			<form method='post' th:action="@{/new-client}">
+		
+				<!--<input type="text" style="text-align: center;" id="id" name="id" maxlength="4" placeholder="Insert here your ID (4 digits max)"/> 
+				</br>
+				</br> -->
+				<input type="text" style="text-align: center;" id="name" name="name" placeholder="Insert here your first name" required/> 
+				</br>
+				</br>
+				<input type="text" style="text-align: center;" id="lastname" name="lastname" placeholder="Insert here your last name" required/> 
+				</br>
+				</br>
+				<input type="email" style="text-align: center;" id="email" name="email" placeholder="Insert here your email" required/>
+				</br>
+				</br>
+				<input type="text" style="text-align: center;" id="username" name="username" placeholder="Insert here your username" required/> 
+				</br>
+				</br>
+				<input type="password" style="text-align: center;" id="password" name="password" placeholder="Insert here your password" required/> 
+				</br>
+				<p>Choose your role: </p>
+				<input style="text-align:center;" type="radio" id="admin" name="role" value="ROLE_ADMIN" required>
+				<label for="admin">Admin</label><br>
+				<input type="radio" id="user" name="role" value="ROLE_USER" required>
+				<label for="user">User</label><br>
+				</br>
+				<input type="submit" value="Register">
+				</br>
+				</br>
+			</form>
+      </div>
+    </div> 
+
+    <div class="about">
+      <h1>About this page  <a href="#">Link</a></h1>
+    </div>
+  </body>
+
+</html>
