@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
+ <title>Product Details Page</title>
+ <link rel="shortcut icon" type="image/x-icon" href="images/shoe_logo.png">
+ <link th:href="@{/styles/index.css}" rel="stylesheet" />
+
+</head>
+  <body>
+    <div class="flex-container">
+      <div class="dividecontainer1">
+        <a class = "sitename" th:href="@{/home}"><h1>Sneakers Temple</h1></a>
+      </div>
+      <div class="dividecontainer2">
+
+        <div class="dividecontainer3">
+          <div class="logoimg"><img src="./images/shoelogo250.png" alt="Site logo"></div>
+        </div>
+
+        <div class="dividecontainer6">
+
+	        <form method="post" th:action="@{/list-products-filtered}">
+			    Filter: <input type="text" name="search_button" id="name" placeholder="Search here (by the name of the product)" size="50" />
+			    &nbsp;
+		    	<input type="submit" value="Search" />
+			</form>
+		
+			<div class="dividecontainer5">
+	          	<div class="advanced_search"><a href="advanced_search.html">Advanced Search</a></div>
+	          	</br>
+	        </div>
+        </div>
+        <div class="dividecontainer8">
+        	<form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+                <button sec:authorize="isAuthenticated()" class="rl_button" type="submit">Logout</button>
+                <button sec:authorize="isAnonymous()" th:href="@{~/login}" class="rl_button" type="submit">Login</button>
+            </form>
+			</br>
+			<form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/new-client.html}">
+                 <button sec:authorize="isAnonymous()" class="rl_button">Register</button>
+            </form>
+			<div sec:authorize="hasRole('USER')">
+		    	<p><a href="#">My Cart</a></p>
+			</div>
+	      	<div sec:authorize="hasRole('ADMIN')">
+			    <p><a th:href="@{/adminpage}">Admin Dashboard Page</a></p>
+			</div>
+			<div sec:authorize="hasRole('ADMIN')">
+			    <p>Logged as [[${#httpServletRequest.remoteUser}]]</p>
+			</div>
+			<div sec:authorize="hasRole('USER')">
+			    <p>Logged as [[${#httpServletRequest.remoteUser}]]</p>
+			</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-container2">
+      <div class="categories">
+        <h1>Categories</h1>
+        <ul>
+          <li><a href="#">Bags</a></li>
+          <li><a href="#">Hats</a></li>
+          <li><a href="#">Jackets</a></li>
+          <li><a href="#">Jeans</a></li>
+          <li class="shoesclass"><a href="#">Shoes</a></li>
+          <li><a href="#">Tees</a></li>
+        </ul>   
+      </div>
+
+      <div class="products">
+        <div class="itemsinpage"><h2>1 item in this page</h2></div>
+        <div class="products1_head"><h1>Product Details</h1></div>
+        <div class="shoe1products">
+          <div class="divide1product">
+            <div id="products_details_page">
+              <img th:src="${product.photo}"/>
+            </div>
+            <div class="description1product"><h1>Description</h1><h2 th:text="${product.description}"/></div>
+        </div>
+
+        <div class="divide2">
+          <form action="http://localhost:8080/product.html" method="POST">
+          <div class="description2product">
+          <h1 th:text="'Model: ' + ${product.name}"/>
+          <h1 th:text="'Price: ' + ${product.price} + ' $'"/>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">Shipping costs:
+              <select name="shippingprice" style="width:20%;" required>
+              <option>5.95 for Portugal</option>
+              <option>10.95 for Rest of The World</option>
+              <option>Free if costs > 200 dollars</option>           
+              </select>
+          </p>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">Delivery date:
+            <select name="shippingprice" style="width:20%;" required>
+            <option>24-48 hours for Portugal</option>
+            <option>1 week for rest of the World</option>         
+            </select>
+          </p>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">Payment methods:
+            <select name="shippingprice" style="width:20%;" required>
+            <option>Paypal</option>
+            <option>MbWay</option>        
+            <option>Skrill</option>    
+            <option>Visa/Mastercard</option>  
+            </select>
+          </p>
+
+          <p style="text-align: left; margin-left: 15px; font-weight: bold;">
+            Units wanted: (2 digits) <input type="text" name="units" value="" placeholder="Insert here the number" maxlength="2" required>
+          </p>
+
+          <input type="submit" value="Checkout" style="width: 20%; margin-left: 15px;color: aliceblue; background-color: darkgray; ">
+        </div>
+
+      </form>
+
+        </div>
+
+        </div>  
+
+        <h3><a id="nextpage" href="#">Next Page</a></h3>
+
+      </div>
+    </div>
+
+    <div class="about">
+      <h1>About this page  <a href="#">Link</a></h1>
+    </div>
+</div>
+
+</body>
+</html>
+

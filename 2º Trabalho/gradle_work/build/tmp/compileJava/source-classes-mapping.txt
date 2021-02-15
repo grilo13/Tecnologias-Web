@@ -1,0 +1,32 @@
+org/shoeshop/jpa/NewProductController.java
+ org.shoeshop.jpa.NewProductController
+org/shoeshop/jpa/ClientRepository.java
+ org.shoeshop.jpa.ClientRepository
+org/shoeshop/jpa/NewClientController.java
+ org.shoeshop.jpa.NewClientController
+org/shoeshop/jpa/MyUserDetails.java
+ org.shoeshop.jpa.MyUserDetails
+org/shoeshop/jpa/MvcConfig.java
+ org.shoeshop.jpa.MvcConfig
+org/shoeshop/jpa/ProductRepository.java
+ org.shoeshop.jpa.ProductRepository
+org/shoeshop/jpa/UserDetailsServiceImpl.java
+ org.shoeshop.jpa.UserDetailsServiceImpl
+org/shoeshop/jpa/SecuringWebApplication.java
+ org.shoeshop.jpa.SecuringWebApplication
+org/shoeshop/jpa/Product.java
+ org.shoeshop.jpa.Product
+org/shoeshop/jpa/ListProductsController.java
+ org.shoeshop.jpa.ListProductsController
+org/shoeshop/jpa/Client.java
+ org.shoeshop.jpa.Client
+org/shoeshop/jpa/ProductService.java
+ org.shoeshop.jpa.ProductService
+org/shoeshop/jpa/ListClientsController.java
+ org.shoeshop.jpa.ListClientsController
+org/shoeshop/jpa/WebSecurityConfig.java
+ org.shoeshop.jpa.WebSecurityConfig
+org/shoeshop/jpa/FilteredItemsController.java
+ org.shoeshop.jpa.FilteredItemsController
+org/shoeshop/jpa/ProductController.java
+ org.shoeshop.jpa.ProductController
