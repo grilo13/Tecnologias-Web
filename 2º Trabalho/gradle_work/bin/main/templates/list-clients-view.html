@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of Clients</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet" />
+    
+    <style>
+    table, th, td {
+    	  border: 2px solid;
+    	  border-color: midnight-blue;
+    	}
+    	
+    table {
+    margin-left:20px;
+    }
+    	
+    </style>
+    
+</head>
+<body>
+    <div class="flex-container">
+      <div class="dividecontainer1">
+        <a class = "sitename" th:href="@{/home}"><h1>Sneakers Temple</h1></a>
+      </div>
+      <div class="dividecontainer2">
+
+        <div class="dividecontainer3">
+          <div class="logoimg"><img src="./images/shoelogo250.png" alt="Site logo"></div>
+        </div>
+
+        <div class="dividecontainer6">
+
+	        <form method="post" th:action="@{/list-products-filtered}">
+			    Filter: <input type="text" name="name" id="name" placeholder="Search here (by the name of the product)" size="50" />
+			    &nbsp;
+		    	<input type="submit" value="Search" />
+			</form>
+		
+			<div class="dividecontainer5">
+	          	<div class="advanced_search"><a href="advanced_search.html">Advanced Search</a></div>
+	        </div>
+        </div>
+        <div class="dividecontainer8">
+       		<p><a th:href="@{/list-products}">List products view</a></p>
+       		<div sec:authorize="hasRole('ADMIN')">
+			    <p><a th:href="@{/adminpage}">Back to Admin Dashboard Page</a></p>
+			</div>
+        	<form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+                <button sec:authorize="isAuthenticated()" class="rl_button" type="submit">Logout</button>
+                <button sec:authorize="isAnonymous()" th:href="@{~/login}" class="rl_button" type="submit">Login</button>
+            </form>
+			</br>
+			<div sec:authorize="hasRole('ADMIN')">
+			    <p>Logged as [[${#httpServletRequest.remoteUser}]]</p>
+			</div>
+			<div sec:authorize="hasRole('USER')">
+			    <p>Logged as [[${#httpServletRequest.remoteUser}]]</p>
+			</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="flex-container2">
+      <div class="products">
+        <div class="list_of_clients_head"><h1>List of Clients Registered on the site</h1></div>
+        <div class="list_description">
+	        <table class="list_of_clients">
+	   		<thead>
+	    		<tr>
+	    			<th style = "width: 50px">ID</th>
+	    			<th style = "width: 200px">First Name</th>
+	    			<th style = "width: 200px">Last Name</th>
+	    			<th style = "width: 200px">Username</th>
+	    			<th style = "width: 300px">Email</th>
+	    			<th style = "width: 150px">Role</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr th:each="client: ${customerList}">
+			    	<td th:text="${client.id}"/>
+			    	<td th:text="${client.firstName}"/>
+			    	<td th:text="${client.lastName}"/>
+			    	<td th:text="${client.username}"/>
+			    	<td th:text="${client.email}"/>
+			    	<td th:text="${client.role}"/>
+	   			 </tr>
+	    	</tbody>
+	    	</table>
+	    </div>
+	    <a id ="register_hyperlink" th:href="@{/home}">Return to home page</a>
+	    </br>
+	    </br>
+      </div>
+    </div>
+
+    <div class="about">
+      <h1>About this page  <a href="#">Link</a></h1>
+    </div>
+    
+    <!-- <p>Lista de clientes</p>
+    <table>
+   		<thead>
+    		<tr>
+    			<th style = "width: 50px">ID</th>
+    			<th style = "width: 200px">First Name</th>
+    			<th style = "width: 200px">Last Name</th>
+    			<th style = "width: 300px">Email</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr th:each="client: ${customerList}">
+		    	<td th:text="${client.id}"/>
+		    	<td th:text="${client.firstName}"/>
+		    	<td th:text="${client.lastName}"/>
+		    	<td th:text="${client.email}"/>
+   			 </tr>
+    	</tbody>
+    </table>-->
+    
+</body>
+</html>
